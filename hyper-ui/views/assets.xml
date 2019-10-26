@@ -10,8 +10,8 @@
     <data>
         <template id="assets_backend" name="Backend Theme" inherit_id="web.assets_backend">
             <xpath expr=".">
-                <link rel="stylesheet" href="hyper-ui/studio_customization/static/common.scss"/>
-                <link rel="stylesheet" href="hyper-ui/studio_customization/static/backend.scss"/>
+                <link rel="stylesheet" href="/hyper-ui/static/common.scss"/>
+                <link rel="stylesheet" href="/hyper-ui/static/backend.scss"/>
             </xpath>
         </template>
     </data>
