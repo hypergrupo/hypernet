@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hyper-ui_hyper-ui,hyper-ui.hyper-ui,model_hyper-ui_hyper-ui,,1,0,0,0
