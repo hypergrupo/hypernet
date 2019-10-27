@@ -6,8 +6,7 @@ import logging
 _logger = logging.getLogger(__name__)
 
 import boto3
-#AWS S3 client used to upload the picture of the employees when created
-s3 = boto3.resource('s3')
+from botocore.exceptions import ClientError
 
 
 EMPLOYEE_STATUS_SELECTION=[('new','Nuevo'),('hired','Contratado'),('fired','Baja')]
@@ -38,16 +37,7 @@ class HrEmployee(models.Model):
         return super().create(values)
 
     def write(self, values):
-        #_logger.debug(len(self.image_1920))
-        if 'image_1920' in values:
-            #Data to upload to S3
-            data = values.image_1920
-            #key to use
-            key=self.id+".png"
-            #Upload to s3
-            s3.Bucket('hypernet-storage').put_object(Key='test.jpg', Body=data)
-            
-            _logger.debug("Se ha actualizado la foto")
+        _logger.debug("Updated")
         return super().write(values)
     
 #    @api.multi
