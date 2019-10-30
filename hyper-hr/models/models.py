@@ -25,6 +25,7 @@ class HrEmployee(models.Model):
     file_school_certificate=fields.Binary("Comprobante de Estudios")
     file_id=fields.Binary("Identificación")
     file_tax_id=fields.Binary("Cédula Fiscal")
+    file_kardex=fields.Binary("Kardex")
 
     #other fields
     tax_id=fields.Char("RFC")
