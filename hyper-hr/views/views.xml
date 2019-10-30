@@ -10,7 +10,7 @@
         </xpath>
 
         <xpath expr="//field[@name='km_home_work']" position="after">
-          <field name="tax_id" string="RFC"/>
+          <field name="no_rfc" string="RFC"/>
           <field name="curp" string="CURP"/>
           <field name="nss" string="NSS"/>
         </xpath>
