@@ -27,7 +27,7 @@ class HrEmployee(models.Model):
     file_kardex=fields.Binary("Kardex")
 
     #other fields
-    no_rfc=fields.Char("RFC")
+    no_rfc=fields.Char(string='RFC', track_visibility='onchange', default=lambda self: self.env.user)
     curp=fields.Char("CURP")
     nss=fields.Char("NSS")
     status=fields.Selection(EMPLOYEE_STATUS_SELECTION,default='new')
