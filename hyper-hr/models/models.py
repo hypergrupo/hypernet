@@ -27,7 +27,7 @@ class HrEmployee(models.Model):
     file_kardex=fields.Binary("Kardex")
 
     #other fields
-    tax_id=fields.Char("RFC")
+    no_rfc=fields.Char("RFC")
     curp=fields.Char("CURP")
     nss=fields.Char("NSS")
     status=fields.Selection(EMPLOYEE_STATUS_SELECTION,default='new')
