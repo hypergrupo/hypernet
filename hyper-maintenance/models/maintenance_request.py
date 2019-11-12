@@ -12,5 +12,5 @@ EMPLOYEE_STATUS_SELECTION = [
     ('new', 'Nuevo'), ('hired', 'Contratado'), ('fired', 'Baja')]
 
 
-class HrEmployeePublic(models.Model):
-    _inherit = "hr.employee"
+class MaintenanceRequest(models.Model):
+    #_inherit = "hr.employee"
