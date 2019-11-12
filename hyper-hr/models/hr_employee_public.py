@@ -14,3 +14,5 @@ EMPLOYEE_STATUS_SELECTION = [
 
 class HrEmployeePublic(models.Model):
     _inherit = "hr.employee"
+
+    no_rfc = fields.Char(string='RFC')
