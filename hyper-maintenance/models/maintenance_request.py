@@ -13,4 +13,4 @@ EMPLOYEE_STATUS_SELECTION = [
 
 
 class MaintenanceRequest(models.Model):
-    #_inherit = "hr.employee"
+    _inherit = "hr.employee"
