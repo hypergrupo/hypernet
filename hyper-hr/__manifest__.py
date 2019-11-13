@@ -3,8 +3,7 @@
     'name': "HyperHR",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Capa de personalización para las aplicaciones de Recursos Humanos en HyperSeguros""",
 
     'description': """
         Long description of module's purpose
