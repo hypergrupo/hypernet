@@ -28,7 +28,8 @@ class HrEmployee(models.Model):
     file_kardex = fields.Binary('Kardex')
 
     # other fields
-    no_rfc = fields.Char(string='RFC', copy=False)
+    no_rfc = fields.Char(string='RFC', copy=False,
+                         index=False, domain=[(1, '=', 1)])
     curp = fields.Char('CURP')
     nss = fields.Char('NSS')
     status = fields.Selection(EMPLOYEE_STATUS_SELECTION, default='new')
