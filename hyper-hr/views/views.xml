@@ -4,7 +4,6 @@
       <field name="name">view.employee.form.inherit</field>
       <field name="model">hr.employee</field>
       <field name="inherit_id" ref="hr.view_employee_form"/>
-      <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_user') ])]"/>
       <field name="arch" type="xml">
         <xpath expr="//form[1]/header[1]" position="inside">
           <field name="status" options="{'clickable': '1'}" widget="statusbar"/>
