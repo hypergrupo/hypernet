@@ -28,7 +28,7 @@ class HrEmployee(models.Model):
     file_kardex = fields.Binary("Kardex")
 
     # other fields
-    no_rfc = fields.Char(string='RFC')
+    no_rfc = fields.Char(string='RFC', copy=False)
     curp = fields.Char("CURP")
     nss = fields.Char("NSS")
     status = fields.Selection(EMPLOYEE_STATUS_SELECTION, default='new')
@@ -41,8 +41,3 @@ class HrEmployee(models.Model):
     def write(self, values):
         _logger.debug("Updated")
         return super().write(values)
-
-class HrEmployeePublic(models.Model):
-    _inherit = "	hr.employee.public"
-
-    no_rfc = fields.Char(string='RFC')
