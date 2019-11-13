@@ -33,6 +33,7 @@ class HrEmployee(models.Model):
     nss = fields.Char("NSS")
     status = fields.Selection(EMPLOYEE_STATUS_SELECTION, default='new')
 
+    #change
     @api.model
     def create(self, values):
         _logger.debug("Created")
