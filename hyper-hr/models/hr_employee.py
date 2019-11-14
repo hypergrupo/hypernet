@@ -41,8 +41,8 @@ class HrEmployee(models.Model):
     @api.model
     def create(self, values):
         _logger.debug('Created')
-        return super().create(values)
+        return super(HrEmployee, self).create(values)
 
     def write(self, values):
         _logger.debug('Updated')
-        return super().write(values)
+        return super(HrEmployee, self).write(values)
