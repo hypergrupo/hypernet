@@ -30,9 +30,12 @@ class HrEmployee(models.Model):
     # other fields
     no_rfc = fields.Char(string='RFC', copy=False,
                          index=False, domain=[(1, '=', 1)])
-    curp = fields.Char('CURP')
-    nss = fields.Char('NSS')
-    status = fields.Selection(EMPLOYEE_STATUS_SELECTION, default='new')
+    curp = fields.Char(string='CURP', copy=False,
+                       index=False, domain=[(1, '=', 1)])
+    nss = fields.Char(string='NSS', copy=False,
+                      index=False, domain=[(1, '=', 1)])
+    status = fields.Selection(EMPLOYEE_STATUS_SELECTION, copy=False, index=1, domain=[
+                              (1, '=', 1)], default='new')
 
     # change
     @api.model
