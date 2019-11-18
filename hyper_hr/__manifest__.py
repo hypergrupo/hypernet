@@ -25,6 +25,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         'data/hr_contract_sequence.xml',
+        'data/hr_welcome_to_the_team_template.xml',
         'views/hr_employee.xml',
         'views/hr_contract.xml'
     ]

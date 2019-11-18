@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="email_template_welcome_to_the_team" model="mail.template">
+            <field name="name">Employee: Welcome to the Team</field>
+            <field name="model_id" ref="hr.model_hr_employee"/>
+            <field name="email_from">Comunidad Hyperseguros &lt;comunidad@hyperseguros.com&gt;</field>
+            <field name="email_to">comunidad@hyperseguros.com</field>
+            <field name="subject">
+                % if object.gender == 'male'
+                Bienvenido ${object.display_name}
+                % endif
+                % if object.gender == 'female'
+                Bienvenida ${object.display_name}
+                % endif
+            </field>
+            <field name="body_html" type="html">
+                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse:collapse;padding-top:16px;background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;">
+                    <tbody>
+                        <tr>
+                            <td align="center">
+                                <table border="0" cellpadding="0" cellspacing="0" width="590" style="border-collapse:collapse;padding:16px;background-color: white; color: #454748; border-collapse:separate;">
+                                    <tbody>
+                                        <tr>
+                                            <td align="center" style="min-width:590px;">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="590" style="border-collapse:collapse;min-width:590px;background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign="middle">
+                                                                <span style="font-size:10px;">
+                                                                    <br/>
+                                                                </span>
+                                                            </td>
+                                                            <td valign="middle" align="center">
+                                                                <img src="/web/image/1163/Logo-Hyperseguros.png?access_token=f78d5f9c-5337-4865-9942-7413ed814bd7" style="border-style:none;vertical-align:middle;padding: 0px; margin: 0px; height: auto; width: 50%;" alt="${object.company_id.name}"/>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td colspan="2" style="text-align:center;">
+                                                                <hr width="100%" style="margin:1rem 0 1rem 0;border-top-color:rgba(0, 0, 0, 0.1);border-top-style:solid;border-top-width:1px;border-left-width:0px;border-bottom-width:0px;border-right-width:0px;overflow-y:visible;overflow-x:visible;height:0px;box-sizing:content-box;background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;"/>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <!-- CONTENT -->
+                                        <tr>
+                                            <td align="center" style="min-width:590px;">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="590" style="border-collapse:collapse;min-width:590px;background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td valign="top" style="font-size:13px;">
+                                                                <div style="font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                                                                    <h1 style="margin:0px 0 0.5rem 0;font-size:2.6rem;color:rgb(33, 37, 41);line-height:1.2;font-weight:400;text-align: center; ">
+                                                                        <font style="color:rgb(206, 0, 0);font-size: 24px;">
+                                                                            <b style="font-weight:bolder;">
+                                                                            % if object.gender == 'male'
+                                                                                ¡Bienvenido al equipo!
+                                                                            % endif
+                                                                            % if object.gender == 'female'
+                                                                                ¡Bienvenida al equipo!
+                                                                            % endif
+                                                                            </b>
+                                                                        </font>
+                                                                    </h1>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top">
+                                                                <p style="margin:0px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;font-size: 13px;">
+                                                                    <br/>
+                                                                </p>
+                                                                <p style="margin:0px;font-size:13px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;">
+                                                                </p>
+                                                                <p style="margin:0px;font-family:&quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif;font-size: 13px;">
+                                                                    <br/>
+                                                                </p>
+                                                                <h1 style="margin:0px 0 0.5rem 0;color:rgb(33, 37, 41);line-height:1.2;font-weight:400;font-size: 13px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; text-align: center;">
+                                                                    <font style="color:rgb(0, 0, 0);font-size: 24px;">${object.display_name}</font>
+                                                                </h1>
+                                                                <h1 style="margin:0px 0 0.5rem 0;color:rgb(33, 37, 41);line-height:1.2;font-weight:400;font-size: 13px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; text-align: center;">
+                                                                    <font style="color:rgb(0, 0, 0);font-size: 14px;">
+                                                                        <br/>
+                                                                    </font>
+                                                                </h1>
+                                                                <h1 style="margin:0px 0 0.5rem 0;color:rgb(33, 37, 41);line-height:1.2;font-weight:400;font-size: 13px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; text-align: center;">
+                                                                    <font style="color:rgb(0, 0, 0);font-size: 14px;">Ingresa con nosotros como:</font>
+                                                                </h1>
+                                                                <h1 style="margin:0px 0 0.5rem 0;color:rgb(33, 37, 41);line-height:1.2;font-weight:400;font-size: 13px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; text-align: center;">
+                                                                    <font style="color:rgb(0, 0, 0);font-size: 18px;"></font>
+                                                                </h1>
+                                                                <h1 style="margin:0px 0 0.5rem 0;font-size:2.6rem;color:rgb(33, 37, 41);line-height:1.2;font-weight:400;text-align: center;">
+                                                                    <font color="#000000" face="Lucida Grande, Helvetica, Verdana, Arial, sans-serif">
+                                                                        <span style="font-size:24px;">
+                                                                            <b style="font-weight:bolder;">${object.job_title}</b>
+                                                                            <b style="font-weight:bolder;">
+                                                                                <br/>
+                                                                            </b>
+                                                                        </span>
+                                                                    </font>
+                                                                </h1>
+
+                                                                <h1 style="margin:0px 0 0.5rem 0;color:rgb(33, 37, 41);line-height:1.2;font-weight:400;font-size: 13px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; text-align: center;">
+                                                                    <font style="color:rgb(0, 0, 0);font-size: 14px;"><br/>Responsable de:<br/>
+                                                                    </font>
+                                                                </h1>
+                                                                % if object.job_functions
+                                                                <h1 style="margin:0px 0 0.5rem 0;color:rgb(33, 37, 41);line-height:1.2;font-weight:400;font-size: 13px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; text-align: center;">
+                                                                    <font style="color:rgb(0, 0, 0);font-size: 14px;">${object.job_functions|safe}</font>
+                                                                </h1>
+                                                                % endif
+                                                                <h1 style="margin:0px 0 0.5rem 0;color:rgb(33, 37, 41);line-height:1.2;font-weight:400;font-size: 13px; font-family: &quot;Lucida Grande&quot;, Helvetica, Verdana, Arial, sans-serif; text-align: center;">
+                                                                    <font style="color:rgb(0, 0, 0);font-size: 14px;">
+                                                                        <br/>
+                                                                        ¡Nos da mucho gusto tenerte en el equipo!<br/><br/>
+                                                                        Atentamente<br/>
+                                                                        Comunidad Hyperseguros
+                                                                    </font>
+                                                                </h1>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" style="font-size:13px;">
+                                                                <br/>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="top" style="font-size:13px;">
+                                                                <br/>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <!-- FOOTER -->
+                                        <tr>
+                                            <td align="center" style="min-width:590px;">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="590" style="border-collapse:collapse;min-width:590px;background-color: white; font-size: 11px; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                                                    <tbody>
+                                                        <td style="text-align:center;">
+                                                            <hr width="100%" style="margin:1rem 0 1rem 0;border-top-color:rgba(0, 0, 0, 0.1);border-top-style:solid;border-top-width:1px;border-left-width:0px;border-bottom-width:0px;border-right-width:0px;overflow-y:visible;overflow-x:visible;height:0px;box-sizing:content-box;background-color:rgb(204,204,204);border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;"/>
+                                                        </td>
+                                                        <tr>
+                                                            <td valign="middle" align="center">
+                                                ${object.company_id.name}
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td valign="middle" align="center" style="opacity:0.7;">
+                                                ${object.company_id.phone}
+                                                % if object.company_id.email
+                                                |                                                                <a href="'mailto:%s' % ${object.company_id.email}" style="text-decoration:none;background-color:transparent;color: #454748;">${object.company_id.email}</a>
+                                                % endif
+                                                % if object.company_id.website
+                                                |                                                                <a href="'%s' % ${object.company_id.website}" style="text-decoration:none;background-color:transparent;color: #454748;">
+                                                    ${object.company_id.website}
+                                                                </a>
+                                                % endif
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </field>
+        </record>
+    </data>
+</odoo>

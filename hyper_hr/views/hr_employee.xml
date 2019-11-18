@@ -9,6 +9,9 @@
       <xpath expr="//form[1]/header[1]" position="inside">
         <field name="status" options="{'clickable': '1'}" widget="statusbar"/>
       </xpath>
+      <xpath expr="//group[@name='managers']" position="after">
+        <field name="job_functions" string="responsabilidades" widget="html"/>
+      </xpath>
       <xpath expr="//field[@name='country_of_birth']" position="after">
         <field name="no_rfc" string="RFC"/>
         <field name="curp" string="CURP"/>

@@ -29,6 +29,10 @@ class HrEmployee(models.Model):
     curp = fields.Char(string='CURP', copy=False, index=False, domain=[(1, '=', 1)])
     nss = fields.Char(string='NSS', copy=False, index=False, domain=[(1, '=', 1)])
     status = fields.Selection(EMPLOYEE_STATUS_SELECTION, copy=False, index=1, domain=[(1, '=', 1)], default='new')
+    job_functions = fields.Html(string="Responsabilidades", copy=False, index=False)
+    welcome_email=fields.Boolean(string='Correo de Bienvenida', default=False)
+    farewell_email=fields.Boolean(string='Correo de Despedida', default=False)
+
 
     # change
     @api.model
@@ -37,5 +41,11 @@ class HrEmployee(models.Model):
         return super(HrEmployee, self).create(values)
 
     def write(self, values):
-        _logger.debug('Updated')
+        _logger.debug(values)
+        if 'status' in values.keys():
+            if values['status']=='active' and self.welcome_email==False:
+                template = self.env.ref('hyper_hr.email_template_welcome_to_the_team')
+                self.env['mail.template'].browse(template.id).send_mail(self.id)
+                values['welcome_email'] = True
+
         return super(HrEmployee, self).write(values)
