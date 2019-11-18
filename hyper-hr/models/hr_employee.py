@@ -6,7 +6,7 @@ _logger = logging.getLogger(__name__)
 
 
 EMPLOYEE_STATUS_SELECTION = [
-    ('new', 'Nuevo'), ('hired', 'Contratado'), ('fired', 'Baja')]
+    ('new', 'Nuevo'), ('hired', 'Contratado'), ('training', 'Capacitación'), ('active', 'Liberado'),('fired', 'Baja')]
 
 
 class HrEmployee(models.Model):
