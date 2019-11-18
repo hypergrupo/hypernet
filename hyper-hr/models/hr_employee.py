@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-
-from botocore.exceptions import ClientError
-import boto3
 from odoo import models, fields, api
 
 import logging
@@ -28,14 +25,10 @@ class HrEmployee(models.Model):
     file_kardex = fields.Binary('Kardex')
 
     # other fields
-    no_rfc = fields.Char(string='RFC', copy=False,
-                         index=False, domain=[(1, '=', 1)])
-    curp = fields.Char(string='CURP', copy=False,
-                       index=False, domain=[(1, '=', 1)])
-    nss = fields.Char(string='NSS', copy=False,
-                      index=False, domain=[(1, '=', 1)])
-    status = fields.Selection(EMPLOYEE_STATUS_SELECTION, copy=False, index=1, domain=[
-                              (1, '=', 1)], default='new')
+    no_rfc = fields.Char(string='RFC', copy=False, index=False, domain=[(1, '=', 1)])
+    curp = fields.Char(string='CURP', copy=False, index=False, domain=[(1, '=', 1)])
+    nss = fields.Char(string='NSS', copy=False, index=False, domain=[(1, '=', 1)])
+    status = fields.Selection(EMPLOYEE_STATUS_SELECTION, copy=False, index=1, domain=[(1, '=', 1)], default='new')
 
     # change
     @api.model
