@@ -5,10 +5,6 @@ import logging
 _logger = logging.getLogger(__name__)
 
 
-EMPLOYEE_STATUS_SELECTION = [
-    ('new', 'Nuevo'), ('hired', 'Contratado'), ('fired', 'Baja')]
-
-
 class HrContract(models.Model):
     _inherit = 'hr.contract'
 
