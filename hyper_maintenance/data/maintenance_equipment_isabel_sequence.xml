@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="seq_maintenance_equipment_isabel_id" model="ir.sequence">
+        <field name="name">Isabel Equipment Id</field>
+        <field name="code">maintenance.equipment.isabel.id</field>
+        <field name="prefix">PBX-ISA-EXT-</field>
+        <field name="padding">0</field>
+        <field name="number_increment">1</field>
+        <field name="number_next_actual">999</field>
+    </record>
+</odoo>
