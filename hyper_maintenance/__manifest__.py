@@ -25,6 +25,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         'data/maintenance_request_sequence.xml',
+        'data/maintenance_equipment_isabel_sequence.xml',
         'views/maintenance_request.xml'
     ]
 }
