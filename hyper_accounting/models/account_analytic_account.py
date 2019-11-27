@@ -17,5 +17,5 @@ class AccountAnalyticAccount(models.Model):
     def create(self, values):
         if 'name' in values.keys():
             values['name'] = self.env['ir.sequence'].next_by_code(
-                'account.analytic_account.id')+"-"+values['name']
-            return super(AccountAnalyticAccount, self).create(values)
+                'account.analytic_account.id')
+        return super(AccountAnalyticAccount, self).create(values)
