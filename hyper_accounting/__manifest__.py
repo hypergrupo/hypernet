@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "HyperMaintenance",
+    'name': "HyperAccounting",
 
     'summary': """
-        Capa de personalización para las aplicaciones de Mantenimiento de Hyperseguros""",
+        Capa de personalización para las aplicaciones de Contabilidad""",
 
     'description': """
         Long description of module's purpose
@@ -19,15 +19,11 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['maintenance'],
+    'depends': ['account_accountant'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'data/maintenance_request_sequence.xml',
-        'data/maintenance_equipment_isabel_sequence.xml',
-        'data/maintenance_equipment_mobile_number_sequence.xml',
-        'data/maintenance_equipment_mobile_phone_sequence.xml',
-        'views/maintenance_request.xml'
+        'data/account_analytic_account.xml',
     ]
 }

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="seq_maintenance_equipment_mobile_phone_id" model="ir.sequence">
+        <field name="name">Mobile Phone Id</field>
+        <field name="code">maintenance.equipment.mobile.phone.id</field>
+        <field name="prefix">HS-MPHD-</field>
+        <field name="padding">5</field>
+        <field name="number_increment">1</field>
+        <field name="number_next_actual">1</field>
+    </record>
+</odoo>
