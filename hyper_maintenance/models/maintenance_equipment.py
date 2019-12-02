@@ -19,4 +19,8 @@ class MaintenanceEquipment(models.Model):
             category=categories[0]
             if(category['name'])=='Extensión PBX (Isabel)':
                 values['name'] = self.env['ir.sequence'].next_by_code('maintenance.equipment.isabel.id')
+            elif(category['name'])=='Teléfono Celular':
+                values['name'] = self.env['ir.sequence'].next_by_code('maintenance.equipment.mobile.phone.id')
+            elif(category['name'])=='Número Telefónico':
+                values['name'] = self.env['ir.sequence'].next_by_code('maintenance.equipment.mobile.number.id')
         return super(MaintenanceEquipment, self).create(values)

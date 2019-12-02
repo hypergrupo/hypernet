@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "HyperMaintenance",
+    'name': "Hyper_bloode_type",
 
     'summary': """
-        Capa de personalización para las aplicaciones de Mantenimiento de Hyperseguros""",
+        Capa de personalización para las aplicaciones de Recursos Humanos en HyperSeguros tipo de sangre""",
 
     'description': """
         Long description of module's purpose
     """,
 
-    'author': "Pablo Adoue Peralta",
+    'author': "David Pedraza",
     'website': "http://www.hyperseguros.com",
 
     # Categories can be used to filter modules in modules listing
@@ -19,15 +19,11 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['maintenance'],
+    'depends': ['hr'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'data/maintenance_request_sequence.xml',
-        'data/maintenance_equipment_isabel_sequence.xml',
-        'data/maintenance_equipment_mobile_number_sequence.xml',
-        'data/maintenance_equipment_mobile_phone_sequence.xml',
-        'views/maintenance_request.xml'
+        'views/hr_bloode_type.xml',
     ]
 }
