@@ -4,15 +4,14 @@
     <field name="name">hr.employee.form.inherit</field>
     <field name="model">hr.employee</field>
     <field name="inherit_id" ref="hr.view_employee_form"/>
-    <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_user') ])]"/>
     <field name="arch" type="xml">
       <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
-        <page name="hr_employee_documentation" string="Salud">
-          <group name="hr_employee_documentation_group">
-            <group name="hr_employee_documentation_group_left">
+        <page name="hr_employee_salud" string="Salud">
+          <group name="hr_employee_salud_group">
+            <group name="hr_employee_salud_group_left">
               <!-- view fields bloody, infonavit, fonacot, one card -->
               <field name="blood_type" string="Tipo de Sangre"/>
-              <field name="allergies" string="Alergias"/>        
+              <field name="allergies" string="Alergias"/>
               <field name="reg_informativo" string="Reg. Infonavit"/>
               <field name="reg_fonacot" string="Reg. Fonacot"/>
               <field name="credito_fonacot" string="Credito fonacot"/>
