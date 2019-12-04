@@ -6,10 +6,17 @@ PREMIUM_MODALITY = [
     ('12', 'Monthly'), ('4', 'Trimestral'), ('2', 'Semestral'), ('1', 'Anual')]
 PAYMENT_METHOD = [
     ('credit', 'Tarjeta de Crédito'), ('debit', 'Tarjeta de Débito'), ('pos', 'Punto de Venta')]
+INSURANCE_LINE = [
+    ('car', 'Auto')]
 
 class slip(models.Model):
     _name = 'slip'
     _description = 'Module for creating'
+
+    client=fields.Many2One('res.partner', string="Contratante", domain=[["is_client","=",True]])
+    insured=fields.Many2One('res.partner', string="Asegurado Final", domain=[["is_client","=",True]])
+    insurer=fields.Many2One('res.partner', string="Asegurado Final", domain=[["is_insurer","=",True]])
+    insurance_line=fields.Selection(INSURANCE_LINE,string="Ramo")
 
     car_licence_plate=fields.Char(string="Placas")
     car_make=fields.Char(string="Marca")
