@@ -49,3 +49,15 @@ class HrEmployee(models.Model):
                 values['welcome_email'] = True
 
         return super(HrEmployee, self).write(values)
+    
+premium_modality=int(record.x_premium_modality)
+
+if premium_modality>1:
+    following_premium=(record.x_premium-record.x_initial_premium)/(premium_modality-1)
+elif premium_modality==1:
+    following_premium=(record.x_premium-record.x_initial_premium)
+
+record.write({
+    'x_following_premium'=following_premium
+})
+
