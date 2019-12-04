@@ -8,6 +8,9 @@ _logger = logging.getLogger(__name__)
 EMPLOYEE_STATUS_SELECTION = [
     ('new', 'Nuevo'), ('hired', 'Contratado'), ('training', 'Capacitación'), ('active', 'Liberado'),('fired', 'Baja')]
 
+EMPLOYEE_JOB_ROL = [
+    ('sales', 'Ventas'), ('billing', 'Cobranza'), ('backoffice', 'Backoffice')]
+
 
 class HrEmployee(models.Model):
     _inherit = 'hr.employee'
@@ -29,6 +32,7 @@ class HrEmployee(models.Model):
     curp = fields.Char(string='CURP', copy=False, index=False, domain=[(1, '=', 1)])
     nss = fields.Char(string='NSS', copy=False, index=False, domain=[(1, '=', 1)])
     status = fields.Selection(EMPLOYEE_STATUS_SELECTION, copy=False, index=1, domain=[(1, '=', 1)], default='new')
+    job_rol = fields.Selection(EMPLOYEE_JOB_ROL, copy=False, index=1, domain=[(1, '=', 1)], default='sales')
     job_functions = fields.Html(string="Responsabilidades", copy=False, index=False)
     welcome_email=fields.Boolean(string='Correo de Bienvenida', default=False)
     farewell_email=fields.Boolean(string='Correo de Despedida', default=False)

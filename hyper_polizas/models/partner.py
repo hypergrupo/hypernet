@@ -3,10 +3,12 @@
  from odoo import models, fields, api
 
 
-class hyper_polizas(models.Model):
-     _name = 'hyper_polizas.slip'
-     _description = 'Module for creating'
+class Partner(models.Model):
+     _inherit = 'res.partner'
 
+     is_client = fields.Char(string='Es Cliente', copy=True, index=False, domain=[(1, '=', 1)])
+     is_insurer = fields.Char(string='Es Aseguradora', copy=True, index=False, domain=[(1, '=', 1)])
+    
 #     name = fields.Char()
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
