@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hyper_polizas_hyper_polizas,hyper_polizas.hyper_polizas,model_hyper_polizas_hyper_polizas,base.group_user,1,1,1,1
