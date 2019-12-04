@@ -13,9 +13,10 @@ class slip(models.Model):
     _name = 'slip'
     _description = 'Module for creating'
 
-    client=fields.Many2One('res.partner', string="Contratante", domain=[["is_client","=",True]])
-    insured=fields.Many2One('res.partner', string="Asegurado Final", domain=[["is_client","=",True]])
-    insurer=fields.Many2One('res.partner', string="Asegurado Final", domain=[["is_insurer","=",True]])
+    client=fields.Many2one('res.partner', string="Contratante", domain=[["is_client","=",True]])
+    insured=fields.Many2one('res.partner', string="Asegurado Final", domain=[["is_client","=",True]])
+    insurer=fields.Many2one('res.partner', string="Asegurado Final", domain=[["is_insurer","=",True]])
+    agent=fields.Many2one('hr.employee', string="Agente", domain=[["job_rol","=","sales"]])
     insurance_line=fields.Selection(INSURANCE_LINE,string="Ramo")
 
     car_licence_plate=fields.Char(string="Placas")
