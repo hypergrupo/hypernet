@@ -26,7 +26,7 @@ class slip(models.Model):
      
     premium=fields.Float(string="Prima")
     initial_premium=fields.Float(string="Prima Inicial")
-    following_premium=fields.Float(string="Fin de Vigencia")
+    following_premium=fields.Float(string="Prima Subsecuente", compute="_following_premium", store=True)
      
     issue_date=fields.Date(string="Fecha de Emisión")
     in_force_date=fields.Date(string="Inicio de Vigencia")
@@ -39,6 +39,15 @@ class slip(models.Model):
     policy_number=fields.Char(string="Número de Póliza")
 
 
+@api.depends('premium','initial_premium','premium_modality')
+def _following_premium(self):
+    for record in self:
+        premium_modality=int(record.premium_modality)
+        if premium_modality==1:
+            record.initial_premium=record.premium
+            record.following_premium=0
+        elif premium_modality >1:
+            record.following_premium=(record.premium-record.initial_premium)/(premium_modality-1)
 
 #     name = fields.Char()
 #     value = fields.Integer()
