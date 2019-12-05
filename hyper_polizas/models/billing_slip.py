@@ -7,7 +7,7 @@ STATUS = [
 
 
 class billing_slip(models.Model):
-    _name = 'slip'
+    _name = 'slip.billing'
     _description = 'Module for creating'
 
     id_resposable = fields.Many2one('hr.employee', string='Responsable', domain=[["job_rol","=","billing"]])

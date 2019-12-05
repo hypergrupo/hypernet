@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import datetime
 from odoo import models, fields, api
 
 PREMIUM_MODALITY = [
@@ -13,6 +12,7 @@ class slip(models.Model):
     _name = 'slip'
     _description = 'Module for creating'
 
+    name = fields.Char()
     client=fields.Many2one('res.partner', string="Contratante", domain=[["is_client","=",True]])
     insured=fields.Many2one('res.partner', string="Asegurado Final", domain=[["is_client","=",True]])
     insurer=fields.Many2one('res.partner', string="Asegurado Final", domain=[["is_insurer","=",True]])
@@ -27,7 +27,7 @@ class slip(models.Model):
      
     premium=fields.Float(string="Prima")
     initial_premium=fields.Float(string="Prima Inicial")
-    following_premium=fields.Float(string="Prima Subsecuente", compute="_following_premium", store=True)
+    following_premium=fields.Float(string="Prima Subsecuente")
      
     issue_date=fields.Date(string="Fecha de Emisión")
     in_force_date=fields.Date(string="Inicio de Vigencia")
@@ -67,13 +67,13 @@ class slip(models.Model):
         
 
 
-@api.depends('premium','initial_premium','premium_modality')
-def _following_premium(self):
-    for record in self:
-        premium_modality=int(record.premium_modality)
-        if premium_modality==1:
-            record.initial_premium=record.premium
-            record.following_premium=0
-        elif premium_modality >1:
-            record.following_premium=(record.premium-record.initial_premium)/(premium_modality-1)
+#@api.depends('premium','initial_premium','premium_modality')
+#def _following_premium(self):
+#    for record in self:
+#        premium_modality=int(record.premium_modality)
+#        if premium_modality==1:
+#            record.initial_premium=record.premium
+#            record.following_premium=0
+#        elif premium_modality >1:
+#            record.following_premium=(record.premium-record.initial_premium)/(premium_modality-1)
 
