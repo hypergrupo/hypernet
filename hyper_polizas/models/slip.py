@@ -40,6 +40,33 @@ class slip(models.Model):
     policy_number=fields.Char(string="Número de Póliza")
 
 
+    # @api.model
+    # def create(self, values):
+    #     _logger.debug(values)
+    #     initial_date = values['issue_date'] + datetime.timedelta(days = 30)
+    #     for x in range(values['premium_modality']):
+    #         if x == 0:
+    #             super(self.env['x_billing_slip'].create({
+    #                 'slip_id': values['id'],
+    #                 'collection_employee': self.filtered('hr.employee') ,
+    #                 'slip_collection': self.filtered('billing_slip'),
+    #                 'amount_receivable': values['initial_premium'],
+    #                 'start_of_payment': self.issue_date,
+    #                 'payment_limit': initial_date,
+    #             }))
+    #         else:
+    #             super(self.env['x_billing_slip'].create({
+    #                 'slip_id': values['id'],
+    #                 'collection_employee': self.filtered('hr.employee') ,
+    #                 'slip_collection': self.filtered('x_billing_slip'),
+    #                 'amount_receivable': values['following_premium'],
+    #                 'start_of_payment': initial_date + datetime.timedelta(days = 1),
+    #                 'payment_limit': initial_date + datetime.timedelta(days = 30),
+    #             }))
+    #             initial_date = initial_date + datetime.timedelta(days = 30)
+        
+
+
 @api.depends('premium','initial_premium','premium_modality')
 def _following_premium(self):
     for record in self:
@@ -50,12 +77,3 @@ def _following_premium(self):
         elif premium_modality >1:
             record.following_premium=(record.premium-record.initial_premium)/(premium_modality-1)
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
