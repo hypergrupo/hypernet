@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo noupdate="1">
-    <record id="seq_billing_slip_id" model="ir.sequence">
-        <field name="name">billing slip</field>
-        <field name="code">billing_slip.id</field>
-        <field name="prefix">HS-EMCT-</field>
+    <record id="seq_slip_id" model="ir.sequence">
+        <field name="name">Slip Id</field>
+        <field name="code">sequence.slip.id</field>
+        <field name="prefix">SLIP-</field>
         <field name="padding">5</field>
         <field name="number_increment">1</field>
         <field name="number_next_actual">1</field>

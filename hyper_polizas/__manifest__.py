@@ -25,9 +25,13 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-         'views/views.xml',
+        'views/partner.xml',
+        'views/slip.xml',
+        'views/billing_slip.xml',
+        'views/menus.xml',
         #'views/templates.xml',
-        'data/slip.xml',
+        'data/slip_sequence.xml',
+        'data/billing_slip_sequence.xml',
     ],
     'application':True,
     # only loaded in demonstration mode

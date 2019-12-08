@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_hyper_polizas_hyper_polizas,hyper_polizas.hyper_polizas,model_slip,base.group_user,1,1,1,1
+access_hyper_polizas_hyper_polizas_billing,hyper_polizas.hyper_polizas,model_billing_slip,base.group_user,1,1,1,1
