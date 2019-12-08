@@ -10,7 +10,7 @@
             </xpath>
             <xpath expr="//group[@name='sale']" position="after">
                 <group name="job_roles" string="Funciones">
-                    <field name="job_role"/>
+                    
                 </group>
             </xpath>
             <xpath expr="//group[@name='purchase']" position="inside">
