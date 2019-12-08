@@ -27,7 +27,7 @@ class Slip(models.Model):
     client=fields.Many2one('res.partner', string="Contratante", domain=[["is_client","=",True]])
     insured=fields.Many2one('res.partner', string="Asegurado Final", domain=[["is_client","=",True]])
     insurer=fields.Many2one('res.partner', string="Aseguradora", domain=[["is_insurer","=",True]])
-    agent=fields.Many2one('res.partner', string="Agente")
+    agent=fields.Many2one('res.partner', string="Agente", domain=[["job_role","=",'sales']])
     insurance_line=fields.Selection(INSURANCE_LINE,string="Ramo")
 
     status=fields.Selection(STATUS, default="quote")
