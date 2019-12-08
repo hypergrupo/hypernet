@@ -14,7 +14,7 @@ class BillingSlip(models.Model):
     name = fields.Char(default="Nuevo")
     slip = fields.Many2one('slip', ondelete='cascade', index=True)
     status = fields.Selection(STATUS, default="schedule")
-    responsible=fields.Many2one('hr.employee', string="Responsable", domain=[["job_role","=",'billing']])
+    responsible=fields.Many2one('res.partner', string="Responsable", domain=[["job_role","=",'billing']])
 
     premium = fields.Float(string="Prima")
     due_premium = fields.Float(string="Prima por pagar")
