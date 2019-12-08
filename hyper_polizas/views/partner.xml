@@ -8,6 +8,11 @@
             <xpath expr="//group[@name='sale']" position="inside">
                 <field name="is_client" string="Es Cliente"/>
             </xpath>
+            <xpath expr="//group[@name='sale']" position="after">
+                <group name="job_roles" string="Funciones">
+                    
+                </group>
+            </xpath>
             <xpath expr="//group[@name='purchase']" position="inside">
                 <field name="is_insurer" string="Es Aseguradora"/>
             </xpath>
