@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="hyper_polizas.billing_slip_list">
+            <field name="name">hyperpolizas.billing_slip.tree</field>
+            <field name="model">billing_slip</field>
+            <field name="arch" type="xml">
+                <tree string="Slips de Cobranza" default_order="start_date" decoration-success="status=='payed'" decoration-warning="status=='billing'" decoration-danger="status=='cancelled'">
+                    <field name="slip"/>
+                    <field name="start_date"/>
+                    <field name="due_date"/>
+                    <field name="premium"/>
+                    <field name="due_premium"/>
+                    <field name="payed_premium"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="hyper_polizas.billing_slip_form">
+            <field name="name">hyperpolizas.billing_slip.form</field>
+            <field name="model">billing_slip</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button string="Chat" class="btn btn-primary o_employee_chat_btn"/>
+                        <field name="status" options="{'clickable': '0'}" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Slip Name" required="True" readonly="1"/>
+                            </h1>
+                            <group>
+                                <group>
+                                    <field name="client" />
+                                    <field name="policy_number" />                                
+                                    <field name="insurer" />
+                                </group>
+                                <group>
+                                    <field name="responsible" />
+                                    <field name="premium" />
+                                    <field name="due_premium" />
+                                    <field name="payed_premium" />
+                                    <field name="start_date"/>
+                                    <field name="due_date"/>
+                                    <field name="payment_date"/>
+                                </group>
+                            </group>
+                        </div>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
