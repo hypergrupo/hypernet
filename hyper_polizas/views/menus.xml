@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="hyper_polizas.slip_action_window">
+            <field name="name">Slips de Seguros</field>
+            <field name="res_model">slip</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- server action to the one above -->
+
+        <record model="ir.actions.server" id="hyper_polizas.slip_action_server">
+            <field name="name">HyperPolizas Slip server</field>
+            <field name="model_id" ref="model_slip"/>
+            <field name="state">code</field>
+            <field name="code">
+              action = {
+                "type": "ir.actions.act_window",
+                "view_mode": "tree,form",
+                "res_model": model._name,
+              }
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="hyper_polizas.billing_slip_action_window">
+            <field name="name">Slips de Cobranza</field>
+            <field name="res_model">billing_slip</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.server" id="hyper_polizas.billing_slip_action_server">
+            <field name="name">HyperPolizas Slip server</field>
+            <field name="model_id" ref="model_billing_slip"/>
+            <field name="state">code</field>
+            <field name="code">
+                      action = {
+                        "type": "ir.actions.act_window",
+                        "view_mode": "tree,form",
+                        "res_model": model._name,
+                      }
+            </field>
+        </record>
+
+        <!-- Top menu item -->
+
+        <menuitem name="Cartera" id="hyper_polizas.menu_root" sequence="10" web_icon="hyper_polizas,static/src/img/icon.png"/>
+
+        <!-- menu categories -->
+
+        <menuitem name="Seguros" id="hyper_polizas.menu_1" parent="hyper_polizas.menu_root" action="hyper_polizas.slip_action_window"/>
+        <menuitem name="Cobranza" id="hyper_polizas.menu_2" parent="hyper_polizas.menu_root" action="hyper_polizas.billing_slip_action_window"/>
+    </data>
+</odoo>
