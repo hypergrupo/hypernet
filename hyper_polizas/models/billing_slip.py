@@ -8,13 +8,13 @@ STATUS = [
 
 class BillingSlip(models.Model):
     _name = 'billing_slip'
-    _description = 'Billing Slip Model'
+    _description = 'Billing Slip Model changes'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(default="Nuevo")
     slip = fields.Many2one('slip', ondelete='cascade', index=True)
     status = fields.Selection(STATUS, default="schedule")
-    responsible=fields.Many2one('res.partner', string="Responsable")
+    responsible=fields.Many2one('res.partner', string="Responsable", domain=[["job_role","=",'sales']])
 
     premium = fields.Float(string="Prima")
     due_premium = fields.Float(string="Prima por pagar")
