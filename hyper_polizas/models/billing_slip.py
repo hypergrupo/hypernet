@@ -8,7 +8,7 @@ STATUS = [
 
 class BillingSlip(models.Model):
     _name = 'billing_slip'
-    _description = 'Billing Slip Model'
+    _description = 'Billing Slip Model changes'
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char(default="Nuevo")
