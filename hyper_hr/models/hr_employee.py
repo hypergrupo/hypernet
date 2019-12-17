@@ -26,6 +26,7 @@ class HrEmployee(models.Model):
     file_id = fields.Binary('Identificación')
     file_tax_id = fields.Binary('Cédula Fiscal')
     file_kardex = fields.Binary('Kardex')
+    cv = fields.Binary('Curriculum')
 
     # other fields
     no_rfc = fields.Char(string='RFC', copy=False, index=False, domain=[(1, '=', 1)])
