@@ -33,6 +33,7 @@
               <field filename="file_school_certificate" name="file_school_certificate" string="Comprobante de Estudios"/>
               <field filename="file_id" name="file_id" string="Identificación"/>
               <field filename="file_tax_id" name="file_tax_id" string="Cédula Fiscal"/>
+              <field filename="cv" name="cv" string="Curriculum"/>
             </group>
           </group>
         </page>
