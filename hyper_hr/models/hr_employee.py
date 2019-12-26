@@ -27,6 +27,8 @@ class HrEmployee(models.Model):
     file_tax_id = fields.Binary('Cédula Fiscal')
     file_kardex = fields.Binary('Kardex')
     cv = fields.Binary('Curriculum')
+    first_recommendation = fields.Binary('primera carta de recomendación')
+    second_recommendation = fields.Binary('segunda carta de recomendación')
 
     # other fields
     no_rfc = fields.Char(string='RFC', copy=False, index=False, domain=[(1, '=', 1)])

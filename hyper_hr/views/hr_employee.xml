@@ -38,6 +38,16 @@
           </group>
         </page>
       </xpath>
+      <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
+        <page name="hr_employee_documentation" string="Cartas de recomendacion">
+          <group name="hr_employee_documentation_group">
+            <group name="hr_employee_documentation_group_left">
+              <field filename="first_recommendation" name="first_recommendation" string="Primera carta de recomendación"/>
+              <field filename="second_recommendation" name="second_recommendation" string="Segunda carta de recomendación"/>
+            </group>
+          </group>
+        </page>
+      </xpath>
     </field>
   </record>
 </odoo>
