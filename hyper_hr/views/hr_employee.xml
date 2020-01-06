@@ -34,14 +34,6 @@
               <field filename="file_id" name="file_id" string="Identificación"/>
               <field filename="file_tax_id" name="file_tax_id" string="Cédula Fiscal"/>
               <field filename="cv" name="cv" string="Curriculum"/>
-            </group>
-          </group>
-        </page>
-      </xpath>
-      <xpath expr="//form[1]/sheet[1]/notebook[1]" position="inside">
-        <page name="hr_employee_documentation" string="Cartas de recomendacion">
-          <group name="hr_employee_documentation_group">
-            <group name="hr_employee_documentation_group_left">
               <field filename="first_recommendation" name="first_recommendation" string="Primera carta de recomendación"/>
               <field filename="second_recommendation" name="second_recommendation" string="Segunda carta de recomendación"/>
             </group>
