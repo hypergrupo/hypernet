@@ -36,6 +36,8 @@
               <field filename="cv" name="cv" string="Curriculum"/>
               <field filename="first_recommendation" name="first_recommendation" string="Primera carta de recomendación"/>
               <field filename="second_recommendation" name="second_recommendation" string="Segunda carta de recomendación"/>
+              <field filename="test_belbin" name="test_belbin" string="Test de belbin"/>
+              <field filename="test_personality" name="test_personality" string="Test de personalidad"/>
             </group>
           </group>
         </page>
