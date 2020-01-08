@@ -29,6 +29,8 @@ class HrEmployee(models.Model):
     cv = fields.Binary('Curriculum')
     first_recommendation = fields.Binary('primera carta de recomendación')
     second_recommendation = fields.Binary('segunda carta de recomendación')
+    test_belbin = fields.Binary('Test de belbin')
+    test_personality = fields.Binary('Test de personalidad')
 
     # other fields
     no_rfc = fields.Char(string='RFC', copy=False, index=False, domain=[(1, '=', 1)])
